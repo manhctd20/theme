@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "http://manhctd20.github.io/myapp",
+  "homepage": "http://manhctd20.github.io/theme",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy":"npm run build",
-    "deploy":"gh-pages -b main -d build"
+    "deploy":"gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
