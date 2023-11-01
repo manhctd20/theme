@@ -1,0 +1,50 @@
+.wrap--inputNumber {
+  .inputNumber {
+    &__body {
+      .field {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        border-radius: 6px;
+        color: currentColor;
+
+        .control {
+          line-height: 20px;
+          height: auto;
+
+          .icon-button {
+            position: inherit !important;
+            padding: 13px 10px !important;
+            height: auto;
+          }
+          .center {
+            border-radius: 0px;
+          }
+          .left {
+            border-right: none;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 0px;
+          }
+          .right {
+            border-left: none;
+            border-bottom-left-radius: 0px;
+            border-top-left-radius: 0px;
+          }
+        }
+
+        .control-input {
+          width: 100%;
+          .ant-input-number-input {
+            text-align: center;
+            padding: 0;
+          }
+          .ant-input-number {
+            width: 100%;
+            border-left: none;
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+.container__wrapper {
+  > .ant-row {
+    display: flex;
+    justify-content: center;
+  }
+
+  background-color: #ffffff;
+  padding: 1rem 0.5rem;
+}
+
+/* Mobile & Tablet: width < 1024px */
+@media only screen and (max-width: 63.9375em) {
+  // .ant-col-8{
+  //     max-width: 100%;
+  // }
+}
+
+/* Mobile: width < 768px */
+/* 48em = 768px */
+@media only screen and (max-width: 48em) {
+  .sp-10 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  img.lazyloaded {
+    width: 100%;
+  }
+  .reviews,
+  .specific {
+    width: 100%;
+  }
+
+  .slideshow-thumbnails img {
+    max-width: 50px;
+  }
+
+  .slideshow-container {
+    margin-bottom: 10px;
+  }
+
+  .btn-group {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  .inputNumber {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .container__wrapper,
+  .container-footer{
+    padding: 10px 15px;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 767px) {
+    .slideshow-thumbnails img {
+        max-width: 70px;
+    }
+    .container__wrapper,
+    .container-footer{
+        padding: 10px 30px;
+    }
+}
+
+/* Tablet: width >= 768px and width < 1024px */
+/* 768px = 48rem and 63.9375em = 1023px */
+@media only screen and (min-width: 48em) and (max-width: 63.9375em) {
+  .sp-10 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  img.lazyloaded {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .reviews,
+  .specific {
+    width: 100%;
+  }
+  .sp-4 {
+    flex: 0 0 16.666666666666664% !important;
+    max-width: 16.666666666666664% !important;
+  }
+  .sp-18 {
+    flex: 0 0 75% !important;
+  }
+
+  .container__wrapper,
+  .container-footer {
+    padding: 10px 30px;
+  }
+
+  .btn-group {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  .inputNumber {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+@media only screen and (width: 820px) {
+  .sp-10 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  .reviews,
+  .specific {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1522px) {
+  .sp-10 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  .reviews,
+  .specific {
+    width: 100% !important;
+  }
+  .container__wrapper,
+  .container-footer{
+    padding: 10px 50px;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .sp-4 {
+    flex: 0 0 16.666666666666664% !important;
+    max-width: 16.666666666666664% !important;
+  }
+
+  .sp-18 {
+    flex: 0 0 75% !important;
+  }
+
+  .slideshow-thumbnails img {
+    max-width: 75px;
+  }
+
+  img.lazyloaded {
+    width: 100%;
+  }
+}

@@ -1,0 +1,35 @@
+.addToCart{
+    .sticky-display{
+        max-width: 1080px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 10px;
+        .ant-row{
+            margin-bottom: 10px;
+        }
+
+        .ant-select-selector{
+            height: 50px !important;
+            border-radius: 8px;
+            .ant-select-selection-item{
+                padding: 10px !important;
+            }
+        }
+        
+        .add-to-cart-button{
+            width: 100%;
+        }
+    }
+}
+
+.sticky__cart{
+    display: block;
+    transition: .3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: #fff;
+    position: sticky;
+    box-shadow: 3px 0 7px rgb(0 0 0 / 40%);
+}

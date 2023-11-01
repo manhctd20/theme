@@ -1,0 +1,58 @@
+.product {
+  &__options {
+    margin-bottom: 18px;
+
+    .control:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  &__varians {
+    .label {
+      color: #1c2430;
+      font-family: "Nunito Sans", sans-serif !important;
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+  }
+  &__body {
+    display: flex;
+    // flex-basis: 0;
+    // flex-grow: 5;
+    // flex-shrink: 1;
+    &--field {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 25px;
+      .control {
+        box-sizing: border-box;
+        clear: both;
+        font-size: 1rem;
+        text-align: left;
+        max-width: 100%;
+        .button {
+          // cursor: pointer;
+          // padding: calc(0.5em - 1px) 1em;
+          text-align: center;
+          white-space: normal;
+          font-size: 14px;
+          line-height: 22px;
+          max-width: 100%;
+          min-width: 76px;
+          background-color: #fff;
+          border: 1px solid #3333;
+          border-radius: 6px !important;
+          &:hover {
+            border-color: #366ae2;
+            color: #366ae2 !important;
+          }
+          &.active {
+            border-color: #366ae2;
+            color: #366ae2 !important;
+          }
+        }
+      }
+    }
+  }
+}

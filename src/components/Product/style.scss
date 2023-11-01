@@ -1,0 +1,128 @@
+.product-wrapper {
+  .product {
+    &__rate {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: #5b759a;
+
+      > img {
+        margin-right: 0.5rem;
+      }
+    }
+    &__title {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    &__price {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 28px;
+      color: #366ae2;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+
+      .lbl-compared-price {
+        color: #5b759a;
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 21px;
+        margin-right: 12px;
+      }
+    }
+  }
+  .paypal-button {
+    &:hover {
+      filter: brightness(0.95);
+      border-color: transparent !important ;
+    }
+    .paypal {
+      position: relative;
+      top: 50%;
+      height: 24px;
+      transform: translateY(-50%);
+      .paypal-logo {
+        height: 100%;
+      }
+    }
+  }
+  .countdownTimer {
+    font-weight: 600;
+    font-size: 16px;
+    color: #1c2430;
+    margin-bottom: 25px;
+    background: #fc6b03;
+    color: white;
+    padding: 7px 9px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .discount {
+    &__title {
+      font-family: "Nunito Sans", sans-serif !important;
+      text-transform: capitalize;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 5px 0px;
+      color: #1c2430;
+    }
+  }
+
+  .product-form {
+    .ant-col-8:first-child {
+      padding-left: 0 !important;
+    }
+    .ant-col-8:last-child {
+      padding-right: 0 !important;
+    }
+    .field {
+      display: flex;
+      // justify-content: space-between;
+      align-items: center;
+      border-radius: 6px;
+      color: currentColor;
+
+      .control {
+        line-height: 20px;
+        height: auto;
+
+        .icon-button {
+          position: inherit !important;
+          padding: 13px 10px !important;
+          height: auto;
+        }
+        .center {
+          border-radius: 0px;
+        }
+        .left {
+          border-right: none;
+          border-bottom-right-radius: 0px;
+          border-top-right-radius: 0px;
+        }
+        .right {
+          border-left: none;
+          border-bottom-left-radius: 0px;
+          border-top-left-radius: 0px;
+        }
+      }
+
+      .control-input {
+        width: 100%;
+        .ant-input-number-input {
+          text-align: center;
+          padding: 0;
+        }
+        .ant-input-number {
+          width: 100%;
+          border-left: none;
+          border-right: none;
+        }
+      }
+    }
+  }
+}

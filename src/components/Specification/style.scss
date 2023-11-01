@@ -1,0 +1,26 @@
+.specific{
+    // width: 540px;
+    // padding: 0 30px;
+
+    &__title{
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 48px;
+        line-height: 28px;
+        color: #2F3D50;
+        margin-bottom: 3rem!important;
+    }
+    &__details{
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+
+            li{
+                font-family: 'Nunito Sans', sans-serif;
+                font-size: 15px;
+                list-style: disc;
+            }
+        } 
+    }
+}

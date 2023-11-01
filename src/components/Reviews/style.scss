@@ -1,0 +1,48 @@
+.reviews{
+    display: block;
+    width: 540px;
+    // padding: 0 30px;
+    font-family: 'Nunito Sans', sans-serif;
+    &__title{
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 48px;
+        line-height: 28px;
+        margin-bottom: 3rem!important;
+    }
+    &__details{
+       .d-flex{
+            display: flex;
+        }
+        .review{
+            &__name{
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                color: #1C2430;
+                padding-right: 5px;
+            }
+            &__rate{
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                font-size: 10px;
+                img{
+                    width: 10px;
+                    height: 10px;
+                    margin-left: 2px;
+                }
+            }
+            &__title{
+                font-weight: 400;
+                margin-bottom: 8px;
+                font-size: 16px;
+            }
+            &__content{
+                font-size: 14px;
+                color: #425570;
+                line-height: 22px;
+            }
+       }
+    }
+}
