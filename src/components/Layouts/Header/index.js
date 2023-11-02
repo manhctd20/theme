@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import "./style.scss";
+import React from "react";
+import { useCart } from "../../../CartContext";
 import images from "../../../assets/images";
-import Menu from "../../Menu";
 import Cart from "../../Cart";
+import Menu from "../../Menu";
+import "./style.scss";
 
 function Header() {
-  const [openCart, setOpenCart] = useState(false);
+  const { cart, setCart, removeItem, openCart, setOpenCart } = useCart();
   return (
     <div className="header__wrapper">
       <div className="header__announce">
@@ -36,7 +37,7 @@ function Header() {
             src={images.cart}
             alt="icon-cart"
           />
-          <Cart open={openCart} close={() => {setOpenCart(false)}}/>
+          <Cart open={openCart} close={() => {setOpenCart(false)}} data={cart} setData={setCart} remove={removeItem}/>
         </div>
       </div>
     </div>

@@ -13,7 +13,6 @@ export default function InputNumberN({ data, setData }) {
 
   const handleIncrement = (productId) => {
     setData((prevProducts) => {
-      console.log(prevProducts);
       const updatedProducts = prevProducts.map((product) => {
         if (product.id === productId) {
           return { ...product, quantity: (product.quantity || 0) + 1 };
@@ -35,7 +34,8 @@ export default function InputNumberN({ data, setData }) {
         if (product.id === productId) {
           return {
             ...product,
-            quantity: Math.max((product.quantity || 0) - 1, 0),
+            quantity: Math.max((product.quantity) - 1, 1),
+
           };
         }
         return product;
@@ -45,7 +45,7 @@ export default function InputNumberN({ data, setData }) {
 
     setProductQuantities((prevQuantities) => ({
       ...prevQuantities,
-      [productId]: Math.max((prevQuantities[productId] || 0) - 1, 0),
+      [productId]: Math.max((prevQuantities[productId]) - 1, 1),
     }));
   };
 

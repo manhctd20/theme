@@ -1,33 +1,52 @@
 import { Button, Col, Divider, Row } from "antd";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import InputNumberN from "../../InputNumberN";
 
-export default function Item({id, data, remove, priceSale, setData, quantity }) {
-  console.log({data});
-  // var total= priceSale * quantity;
-  const [total, setTotal] = useState(0);
-  
+export default function Item({ data, remove, setData }) {
+  const total= [0];
+  data.map((item) => {
+    total[item.id] = item.quantity * item.priceSale;
+    return total;
+  });
+
+  function sum(total, num) {
+    return total + num;
+  }
+
+  const quantity = [0];
+  data.map((item) => {
+    quantity[item.id] = item.quantity;
+    return quantity;
+  });
+
+  var sumQuantities = 0;
+  sumQuantities = quantity.reduce(sum);
+
+  var totals = total.reduce(sum);
+
   var isDiscount = false;
 
   let discount = 0;
-  if (quantity >= 2) {
+  if (sumQuantities >= 2 && sumQuantities <= 3) {
     isDiscount = true;
-    discount = (total * 0.1).toFixed(2);
+    discount = (totals * 0.1).toFixed(2);
   }
-  if (quantity >= 4) {
-    discount = (total * 0.15).toFixed(2);
+
+  if (sumQuantities >= 4) {
+    isDiscount = true;
+    discount = (totals * 0.15).toFixed(2);
   }
   let feeShip = 0;
-  if (total < 50) {
+  if (totals < 50) {
     feeShip = 4.99;
   }
-  useEffect(()=>{
-    setTotal(priceSale*quantity)
-     // eslint-disable-next-line 
-  }, [quantity])
+  // useEffect(()=>{
+
+  //   // eslint-disable-next-line
+  // },[sumQuantities])
   return (
     <>
-    {data.map((item, index) => {
+      {data.map((item, index) => {
         return (
           <div key={item.id}>
             <Row gutter={32}>
@@ -72,10 +91,7 @@ export default function Item({id, data, remove, priceSale, setData, quantity }) 
 
                 <Row style={{ marginTop: 10 }}>
                   <Col style={{ height: 50 }} className="inputNumber" span={12}>
-                    <InputNumberN
-                      setData={setData}
-                      data={[item]}
-                    />
+                    <InputNumberN setData={setData} data={[item]} />
                   </Col>
                   <Col span={10}>
                     <del
@@ -87,8 +103,8 @@ export default function Item({id, data, remove, priceSale, setData, quantity }) 
                     <span
                       style={{ fontSize: 16, marginLeft: 5 }}
                       className="lbl-price"
-                      >
-                       ${total}
+                    >
+                      ${(item.priceSale * item.quantity).toFixed(2)}
                     </span>
                   </Col>
                 </Row>
@@ -100,14 +116,14 @@ export default function Item({id, data, remove, priceSale, setData, quantity }) 
       })}
       {data.length > 0 && (
         <>
-          <span>SubTotal: ${total}</span>
+          <span>SubTotal: ${totals.toFixed(2)}</span>
           <br />
 
           {isDiscount && <Row>Discount: -${discount}</Row>}
 
           <span>Shipping: ${feeShip}</span>
           <br />
-          <span>Total: ${(total + feeShip - discount).toFixed(2)}</span>
+          <span>Total: ${(totals + feeShip - discount).toFixed(2)}</span>
         </>
       )}
     </>

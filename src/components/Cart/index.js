@@ -3,7 +3,8 @@ import React from "react";
 import Item from "./Items";
 
 export default function Cart(props) {
-  const { open, close, data, remove, priceSale, setData, id, quantity } = props;
+  const { open, close, data, remove, setData } = props;
+  
   return (
     <>
       <Drawer
@@ -14,18 +15,15 @@ export default function Cart(props) {
         zIndex={99999}
         width={480}
       >
-        {data ? (
+        {data.length ? (
           <Item
             data={data}
             setData={setData}
             remove={remove}
-            priceSale={priceSale}
-            id={id}
-            quantity={quantity}
           />
-        ) : (
-          "chua co san pham"
-        )}
+         ) : ( 
+          "Giỏ hàng còn trống" 
+        )} 
       </Drawer>
     </>
   );

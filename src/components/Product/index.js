@@ -4,35 +4,17 @@ import React, { useState } from "react";
 import Cart from "../Cart";
 import Discount from "../Discount";
 import "./style.scss";
+import { useCart } from "../../CartContext";
 
 export default function Product() {
-  const [openCart, setOpenCart] = useState(false);
-  const [data, setData] = useState([]);
+  const { cart, setCart, addToCart, removeItem,openCart, setOpenCart } = useCart();
+  console.log(cart);
+
   const [quantity, setQuantity] = useState(1);
   const [priceSale, setPriceSale] = useState(19.99);
   const [price, setPrice] = useState(33.99);
   const [option, setOption] = useState("BUY 1");
   const [id, setId] = useState(1);
-
-  const addToCart = (product, quantity) => {
-    const productInCart = data.find((item) => item.id === product.id);
-
-    if (productInCart) {
-      const updatedCart = data.map((item) =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + quantity }
-          : item
-      );
-      setData(updatedCart);
-    } else {
-      setData([...data, { ...product, quantity }]);
-    }
-  };
-
-  function removeItem(id) {
-    const newData = data.filter((item) => id !== item.id);
-    setData(newData);
-  }
 
   var newItem = {
     id: id,
@@ -194,7 +176,7 @@ export default function Product() {
             title="2 items get 10% off"
             subTitle="on each product"
             onClick={() => {
-              // addToCart(newItem, 2);
+              addToCart(newItem, 2);
               setOpenCart(true);
             }}
           />
@@ -218,14 +200,9 @@ export default function Product() {
           close={() => {
             setOpenCart(false);
           }}
-          id={id}
-          data={data}
+          data={cart}
+          setData={setCart}
           remove={removeItem}
-          // value={value}
-          // setValue={setValue}
-          priceSale={priceSale}
-          setData={setData}
-          quantity={quantity}
         />
       </div>
     </div>
