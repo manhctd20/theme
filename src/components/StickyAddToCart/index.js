@@ -1,11 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ButtonN from "../Button";
 import InputNumberN from "../InputNumberN";
 
-import { Col, Row, Select } from "antd";
+import { Button, Col, InputNumber, Row, Select } from "antd";
 import "./style.scss";
+import { useCart } from "../../CartContext";
 
 export default function StickyAddToCart() {
+  const { cart, setCart, removeItem, openCart, setOpenCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
   const cartRef = useRef(null);
   const stickyCartFunc = () => {
     window.addEventListener("scroll", () => {
@@ -23,6 +26,16 @@ export default function StickyAddToCart() {
     stickyCartFunc();
     return window.removeEventListener("scroll", stickyCartFunc);
   });
+
+  const handleIncrease = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleDecrease = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
   return (
     <div className="addToCart" ref={cartRef}>
       <Col className="sticky-display">
@@ -51,14 +64,31 @@ export default function StickyAddToCart() {
             />
           </Col>
           <Col span={6}>
-            <div>
-              <InputNumberN />
+          <div className="field">
+              <p className="control">
+                <Button onClick={handleDecrease} className="icon-button left">
+                  -
+                </Button>
+              </p>
+              <p className="control control-input">
+                <InputNumber
+                  className="icon-button center"
+                  value={quantity}
+                  min={1}
+                  readOnly
+                />
+              </p>
+              <p className="control">
+                <Button onClick={handleIncrease} className="icon-button right">
+                  +
+                </Button>
+              </p>
             </div>
           </Col>
         </Row>
         <div className="sticky-btn">
           <Row gutter={[8, 8]}>
-            <ButtonN />
+            <ButtonN quantity={quantity}/>
           </Row>
         </div>
       </Col>

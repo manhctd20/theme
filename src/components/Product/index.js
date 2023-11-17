@@ -7,7 +7,7 @@ import "./style.scss";
 import { useCart } from "../../CartContext";
 
 export default function Product() {
-  const { cart, setCart, addToCart, removeItem,openCart, setOpenCart } = useCart();
+  const { cart, setCart, addToCart, removeItem, openCart, setOpenCart } = useCart();
   console.log(cart);
 
   const [quantity, setQuantity] = useState(1);
